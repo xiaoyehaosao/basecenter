@@ -10,7 +10,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @date 15:07 2019/11/13
  **/
 @SpringCloudApplication
-@EnableDiscoveryClient
 public class BaseCenterApplication {
 
     public static void main(String[] args) {

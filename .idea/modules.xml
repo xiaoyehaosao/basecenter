@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/basecenter.iml" filepath="$PROJECT_DIR$/basecenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basecenter (1).iml" filepath="$PROJECT_DIR$/basecenter (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/basecenter-common/basecenter-common.iml" filepath="$PROJECT_DIR$/basecenter-common/basecenter-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/basecenter-dao/basecenter-dao.iml" filepath="$PROJECT_DIR$/basecenter-dao/basecenter-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/basecenter-domain/basecenter-domain.iml" filepath="$PROJECT_DIR$/basecenter-domain/basecenter-domain.iml" />

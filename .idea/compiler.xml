@@ -16,6 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basecenter" target="1.5" />
+      <module name="basecenter (1)" target="1.5" />
       <module name="basecenter-common" target="1.5" />
       <module name="basecenter-dao" target="1.5" />
       <module name="basecenter-domain" target="1.5" />

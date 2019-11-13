@@ -6,20 +6,8 @@ spring:
   jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8
+  profiles:
+    active: dev
   resources:
      static-locations: classpath:/resources/
-  cloud:
-    consul:
-      host: 10.10.11.107
-      port: 8500
-      discovery:
-        register: true
-        hostname: ${spring.cloud.client.ip-address}
-        service-name: ${spring.application.name}
-        healthCheckPath: /actuator/health
-        healthCheckInterval: 15s
-        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
-        health-check-critical-timeout: 20s
-        tags: version=1.0.0,name=gateway
-
 
