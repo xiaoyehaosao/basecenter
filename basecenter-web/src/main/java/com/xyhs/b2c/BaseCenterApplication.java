@@ -1,15 +1,14 @@
 package com.xyhs.b2c;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.cloud.client.SpringCloudApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author ljp
  * @apiNote
  * @date 15:07 2019/11/13
  **/
-@SpringCloudApplication
+@SpringBootApplication
 public class BaseCenterApplication {
 
     public static void main(String[] args) {

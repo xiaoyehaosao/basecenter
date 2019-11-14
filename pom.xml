@@ -19,7 +19,49 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot-dependencies.version>2.2.1.RELEASE</spring-boot-dependencies.version>
+        <basecenter.version>0.0.1-SNAPSHOT</basecenter.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring-boot 依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- base-center 依赖 -->
+            <dependency>
+                <groupId>com.xyhs.b2c</groupId>
+                <artifactId>basecenter-domain</artifactId>
+                <version>${basecenter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xyhs.b2c</groupId>
+                <artifactId>basecenter-common</artifactId>
+                <version>${basecenter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xyhs.b2c</groupId>
+                <artifactId>basecenter-export</artifactId>
+                <version>${basecenter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xyhs.b2c</groupId>
+                <artifactId>basecenter-dao</artifactId>
+                <version>${basecenter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xyhs.b2c</groupId>
+                <artifactId>basecenter-service</artifactId>
+                <version>${basecenter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <!-- 开发环境 -->
     <profiles>
@@ -48,8 +90,31 @@
         </profile>
     </profiles>
 
+
     <build>
         <plugins>
+          <!--  <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+            </plugin>-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <target>${java.version}</target>
+                    <source>${java.version}</source>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
