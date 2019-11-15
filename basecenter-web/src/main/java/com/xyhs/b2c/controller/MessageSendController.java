@@ -1,9 +1,11 @@
 package com.xyhs.b2c.controller;
 
 import com.xyhs.b2c.ExecuteResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.xyhs.b2c.dto.TestDTO;
+import com.xyhs.b2c.vo.TestVO;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * @author ljp
@@ -18,6 +20,16 @@ public class MessageSendController {
      public ExecuteResult testController(String testMsg){
          ExecuteResult result = new ExecuteResult();
          result.setResultMessage(testMsg);
+         return result;
+     }
+
+
+     @PostMapping(value = "testPost")
+     public ExecuteResult<TestVO> testPostController(@RequestBody TestVO testVO){
+         ExecuteResult<TestVO> result = new ExecuteResult<>();
+         testVO.setBirthDay(new Date());
+         result.setResult(testVO);
+         result.setResultMessage("This is a test post");
          return result;
      }
 }

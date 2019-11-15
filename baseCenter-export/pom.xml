@@ -19,6 +19,10 @@
             <groupId>com.xyhs.b2c</groupId>
             <artifactId>basecenter-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
