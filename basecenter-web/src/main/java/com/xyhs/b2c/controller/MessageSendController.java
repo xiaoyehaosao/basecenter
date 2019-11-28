@@ -18,6 +18,12 @@ public class MessageSendController {
 
      @GetMapping(value ="/sendTest")
      public ExecuteResult testController(String testMsg){
+
+         try {
+             Thread.sleep(6000);
+         } catch (InterruptedException e) {
+             e.printStackTrace();
+         }
          ExecuteResult result = new ExecuteResult();
          result.setResultMessage(testMsg);
          return result;
