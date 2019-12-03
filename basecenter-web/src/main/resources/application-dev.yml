@@ -2,7 +2,7 @@ spring:
 ############# 新注册注册consul 配置################
   cloud:
     consul:
-      host: 192.168.0.4
+      host: 10.10.11.107
       port: 8500
       discovery:
         register: true
@@ -15,12 +15,8 @@ spring:
         tags: version=1.0.0,name=gateway
   datasource:
     url: jdbc:mysql://182.61.42.210:3306/basecenter?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: Ljp10061087@
     type: com.alibaba.druid.pool.DruidDataSource
 
-mybatis:
-  config-location: classpath:config/mybatis-config.xml
-#  mapper-locations: classpath:mapper/*.xm
-#  type-aliases-packag: com.yibao.beta.dao.entity
