@@ -3,10 +3,21 @@ package com.xyhs.b2c;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.env.OriginTrackedMapPropertySource;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.ClassUtils;
+import org.springframework.util.ResourceUtils;
 
+import javax.annotation.Resource;
+import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @author ljp
@@ -15,15 +26,17 @@ import java.util.List;
  **/
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Component
+@PropertySource(value = {"classpath:application-dev.yml"})
 public class SampleTest {
-
-    @Autowired
-    private DeliveryAddressInfoMapper deliveryAddressInfoMapper;
-
+    @Value("${spring.datasource.url}")
+    public String port;
     @Test
-    public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
-        List<DeliveryAddressInfo> userList = deliveryAddressInfoMapper.selectList(null);
-        userList.forEach(System.out::println);
+    public void codeGenerator()  {
+        String path2 =System.getProperty("user.dir");
+        System.out.println(path2);
+        System.out.println(port);
     }
+
+
 }

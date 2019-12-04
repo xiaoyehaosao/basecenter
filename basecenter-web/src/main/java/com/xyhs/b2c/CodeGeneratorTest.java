@@ -1,5 +1,4 @@
 package com.xyhs.b2c;
-
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
@@ -8,18 +7,15 @@ import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author ljp
  * @apiNote
- * @date 16:57 2019/12/3
+ * @date 12:37 2019/12/4
  **/
-public class CodeGenerator {
+public class CodeGeneratorTest {
     /**
      * <p>
      * 读取控制台内容
@@ -41,22 +37,21 @@ public class CodeGenerator {
 
     public static void main(String[] args) {
         // 代码生成器
-        AutoGenerator mpg  = new AutoGenerator();
+        AutoGenerator mpg = new AutoGenerator();
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/basecenter");
+        projectPath = projectPath + "/basecenter";
+        gc.setOutputDir(projectPath);
         gc.setAuthor("jobob");
         gc.setOpen(false);
-        gc.setEnableCache(false);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://182.61.42.210:3306/basecenter?useUnicode=true&characterEncoding=UTF-8&useSSL=false");
-        // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("Ljp10061087@");
@@ -64,8 +59,13 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.xyhs.b2c");
+        pc.setModuleName("com.xyhs.b2c");//scanner("模块名"));
+        pc.setParent("basecenter-dao");
+        pc.setMapper("dao");
+        pc.setEntity("domain");
+       /* Map<String, String> pathInfo = new HashMap<>();
+        pathInfo.put("domain","basecenter-dao");
+        pc.setPathInfo(pathInfo);*/
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -78,20 +78,31 @@ public class CodeGenerator {
 
         // 如果模板引擎是 freemarker
         //String templatePath = "/templates/mapper.xml.ftl";
-        //如果模板引擎是 velocity
+        // 如果模板引擎是 velocity
          String templatePath = "/templates/mapper.xml.vm";
 
         // 自定义输出配置
         List<FileOutConfig> focList = new ArrayList<>();
         // 自定义配置会被优先输出
-        focList.add(new FileOutConfig(templatePath) {
+       /* focList.add(new FileOutConfig(templatePath) {
             @Override
             public String outputFile(TableInfo tableInfo) {
+                tableInfo.setMapperName(tableInfo.getEntityName() + "Dao");
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "/basecenter/basecenter-dao/src/main/resources/mapper/"
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
+        String mapperPath = "/templates/mapper.java.vm";
+        focList.add(new FileOutConfig(mapperPath) {
+            @Override
+            public String outputFile(TableInfo tableInfo) {
+                tableInfo.setMapperName(tableInfo.getEntityName() + "Dao");
+                // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
+                return projectPath + "/basecenter/basecenter-dao/src/main/java/com/xyhs/b2c/dao/"
+                        + "/" + tableInfo.getEntityName() + "Dao" + StringPool.DOT_JAVA;
+            }
+        });*/
         /*
         cfg.setFileCreate(new IFileCreate() {
             @Override
@@ -115,6 +126,11 @@ public class CodeGenerator {
         // templateConfig.setController();
 
         templateConfig.setXml(null);
+        templateConfig.setMapper(null);
+        templateConfig.setServiceImpl(null);
+        templateConfig.setService(null);
+        //templateConfig.setEntity(null);
+        templateConfig.setController(null);
         mpg.setTemplate(templateConfig);
 
         // 策略配置
@@ -132,7 +148,6 @@ public class CodeGenerator {
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
-      //  mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
     }
 }
