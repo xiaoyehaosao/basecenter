@@ -1,3 +1,4 @@
+/*
 package com.xyhs.b2c;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
@@ -13,22 +14,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+*/
 /**
  * @author ljp
  * @apiNote
- * @date 12:37 2019/12/4
- **/
+ * @date 14:16 2019/12/9
+ **//*
+
 public class CodeGeneratorTest {
 
 
 
-
-
-    /**
+    */
+/**
      * <p>
      * 读取控制台内容
      * </p>
-     */
+     *//*
+
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
         StringBuilder help = new StringBuilder();
@@ -43,10 +46,10 @@ public class CodeGeneratorTest {
         throw new MybatisPlusException("请输入正确的" + tip + "！");
     }
 
-
-    private static AutoGenerator initMpg(){
+    public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
+
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
@@ -65,17 +68,11 @@ public class CodeGeneratorTest {
         mpg.setDataSource(dsc);
 
         // 包配置
-        return mpg;
-    }
-    private static PackageConfig initPackage(){
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.xyhs.b2c");
-        return pc;
-    }
+        pc.setParent("com.baomidou.ant");
+        mpg.setPackageInfo(pc);
 
-
-    private static void templateConfig(AutoGenerator mpg){
         // 自定义配置
         InjectionConfig cfg = new InjectionConfig() {
             @Override
@@ -83,8 +80,10 @@ public class CodeGeneratorTest {
                 // to do nothing
             }
         };
+
         // 如果模板引擎是 velocity
         String templatePath = "/templates/mapper.xml.vm";
+
         // 自定义输出配置
         List<FileOutConfig> focList = new ArrayList<>();
         // 自定义配置会被优先输出
@@ -92,17 +91,8 @@ public class CodeGeneratorTest {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return  "F:/xyhs/basecenter/basecenter-dao/src/main/resources/mapper/"
+                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
-            }
-        });
-        String javaTemplate = "/templates/mapper.java.vm";
-        focList.add(new FileOutConfig(templatePath) {
-            @Override
-            public String outputFile(TableInfo tableInfo) {
-                // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return  "F:/xyhs/basecenter/basecenter-dao/src/main/com/xyhs/b2c/domain"
-                        + "/" + tableInfo.getEntityName()  + StringPool.DOT_JAVA;
             }
         });
 
@@ -111,6 +101,8 @@ public class CodeGeneratorTest {
 
         // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
+
+
         templateConfig.setXml(null);
         templateConfig.setEntity(null);
         templateConfig.setController(null);
@@ -118,14 +110,7 @@ public class CodeGeneratorTest {
         templateConfig.setService(null);
         templateConfig.setMapper(null);
         mpg.setTemplate(templateConfig);
-    }
 
-    public static void main(String[] args) {
-        // 代码生成器
-        AutoGenerator mpg = initMpg();
-        PackageConfig pc = initPackage();
-        mpg.setPackageInfo(pc);
-        templateConfig(mpg);
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
@@ -133,6 +118,8 @@ public class CodeGeneratorTest {
         strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
+        // 公共父类
+        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
         // 写于父类中的公共字段
         strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
@@ -141,4 +128,6 @@ public class CodeGeneratorTest {
         mpg.setStrategy(strategy);
         mpg.execute();
     }
+
 }
+*/

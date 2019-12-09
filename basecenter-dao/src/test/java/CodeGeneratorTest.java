@@ -1,16 +1,10 @@
-import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author ljp
@@ -30,12 +24,12 @@ public class CodeGeneratorTest {
     /**
      * 基类需要手动创建 -----也可以不初始化
      */
-    private static String baseEntity ="com.xyhs.b2c.domain.BaseEntity";
+    private static final String baseEntity ="com.xyhs.b2c.domain.BaseEntity";
 
     /**
      * 路径中在src.main.java之后的包命
      */
-    private static String afterJavaPackageName ="com.xyhs.b2c";
+    private static final String afterJavaPackageName ="com.xyhs.b2c";
 
 
     @Test
@@ -45,25 +39,7 @@ public class CodeGeneratorTest {
         // 代码生成器
         AutoGenerator mpg  = initDataBase();
         initDaoCode(mpg);
-        List<FileOutConfig>  focList = new ArrayList<>();
-        execute(mpg,focList);
-    }
-
-    /**
-     * <p>
-     * 读取控制台内容
-     * </p>
-     */
-    private static String scanner(String tip) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(("请输入" + tip + "："));
-        if (scanner.hasNext()) {
-            String ipt = scanner.next();
-            if (StringUtils.isNotEmpty(ipt)) {
-                return ipt;
-            }
-        }
-        throw new MybatisPlusException("请输入正确的" + tip + "！");
+        execute(mpg);
     }
 
     /**
@@ -108,7 +84,7 @@ public class CodeGeneratorTest {
     }
 
 
-    private static void execute(AutoGenerator mpg,List<FileOutConfig> focList){
+    private static void execute(AutoGenerator mpg){
 
         // 自定义配置
         StrategyConfig strategy = new StrategyConfig();
