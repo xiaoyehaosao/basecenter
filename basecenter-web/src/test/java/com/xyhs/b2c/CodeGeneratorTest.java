@@ -1,4 +1,4 @@
-/*
+
 package com.xyhs.b2c;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
@@ -14,23 +14,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-*/
 /**
  * @author ljp
  * @apiNote
  * @date 14:16 2019/12/9
- **//*
+ **/
 
 public class CodeGeneratorTest {
 
 
-
-    */
-/**
+    /**
      * <p>
      * 读取控制台内容
      * </p>
-     *//*
+     */
 
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
@@ -130,4 +127,4 @@ public class CodeGeneratorTest {
     }
 
 }
-*/
+

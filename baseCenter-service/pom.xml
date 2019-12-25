@@ -13,12 +13,14 @@
     <dependencies>
         <dependency>
             <groupId>com.xyhs.b2c</groupId>
-            <artifactId>basecenter-export</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.xyhs.b2c</groupId>
             <artifactId>basecenter-dao</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.2.0</version>
+        </dependency>
     </dependencies>
+
 
 </project>

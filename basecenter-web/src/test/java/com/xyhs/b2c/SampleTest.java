@@ -1,3 +1,4 @@
+/*
 package com.xyhs.b2c;
 
 import org.junit.Test;
@@ -8,11 +9,13 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit4.SpringRunner;
 
+*/
 /**
  * @author ljp
  * @apiNote
  * @date 16:36 2019/12/3
- **/
+ **//*
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Component
@@ -29,3 +32,4 @@ public class SampleTest {
 
 
 }
+*/

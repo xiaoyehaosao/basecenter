@@ -1,3 +1,4 @@
+/*
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -6,29 +7,37 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.Test;
 
+*/
 /**
  * @author ljp
  * @apiNote
  * @date 15:05 2019/12/4
- **/
+ **//*
+
 
 
 
 public class CodeGeneratorTest {
 
-    /**
+    */
+/**
      * 数据表
-      */
+      *//*
+
     private  static String[] tables = new String[]{"delivery_address_info"};
 
-    /**
+    */
+/**
      * 基类需要手动创建 -----也可以不初始化
-     */
+     *//*
+
     private static final String baseEntity ="com.xyhs.b2c.domain.BaseEntity";
 
-    /**
+    */
+/**
      * 路径中在src.main.java之后的包命
-     */
+     *//*
+
     private static final String afterJavaPackageName ="com.xyhs.b2c";
 
 
@@ -42,10 +51,12 @@ public class CodeGeneratorTest {
         execute(mpg);
     }
 
-    /**
+    */
+/**
      * 初始化数据库
      * @return 代码生成器
-     */
+     *//*
+
     private static AutoGenerator initDataBase(){
         AutoGenerator mpg  = new AutoGenerator();
         // 全局配置
@@ -68,10 +79,12 @@ public class CodeGeneratorTest {
         return mpg;
     }
 
-    /**
+    */
+/**
      * Dao层代码生成
      * @param mpg 代码生成器
-     */
+     *//*
+
     private static void initDaoCode(AutoGenerator mpg){
         // 包配置
         PackageConfig pc = new PackageConfig();
@@ -103,3 +116,4 @@ public class CodeGeneratorTest {
 
 
 }
+*/

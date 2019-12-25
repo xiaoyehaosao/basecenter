@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 15:07 2019/11/13
  **/
 @SpringBootApplication
-@MapperScan("com.xyhs.b2c.dao")
+@MapperScan("com.xyhs.b2c.mapper")
 public class BaseCenterApplication {
 
     public static void main(String[] args) {

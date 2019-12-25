@@ -1,4 +1,4 @@
-package com.xyhs.b2c.domain;
+package com.xyhs.b2c.entity;
 
 import java.io.Serializable;
 
