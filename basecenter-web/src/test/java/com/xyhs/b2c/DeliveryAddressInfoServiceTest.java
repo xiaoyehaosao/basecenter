@@ -31,11 +31,7 @@ public class DeliveryAddressInfoServiceTest {
 
     @Test
     public void findOne(){
-       // List<DeliveryAddressInfo> list =  deliveryAddressInfoService.list();
-
-       // IPage<DeliveryAddressInfo> page = new Ipage
         Page<DeliveryAddressInfo> page = new Page<>();
-       // DeliveryAddressInfo param = new DeliveryAddressInfo();
         QueryWrapper<DeliveryAddressInfo> param = new QueryWrapper<>();
         IPage<DeliveryAddressInfo> pageResult =  deliveryAddressInfoService.page(page,param);
         log.info(JSONObject.toJSONString( pageResult));
