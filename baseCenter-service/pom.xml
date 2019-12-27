@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <!-- 依赖 -->
     <artifactId>basecenter-service</artifactId>
     <dependencies>
         <dependency>
@@ -16,6 +16,5 @@
             <artifactId>basecenter-dao</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>
