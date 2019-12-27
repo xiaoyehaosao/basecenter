@@ -21,6 +21,7 @@
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
         <basecenter.version>0.0.1-SNAPSHOT</basecenter.version>
+        <maven.plugin.version>3.8.1</maven.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -101,6 +102,18 @@
 
 
     <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -115,7 +128,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
+                        <addMavenDescriptor>true</addMavenDescriptor>
                     </archive>
                 </configuration>
             </plugin>
@@ -125,5 +138,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
