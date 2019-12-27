@@ -21,7 +21,6 @@
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
         <basecenter.version>0.0.1-SNAPSHOT</basecenter.version>
-        <maven.plugin.version>3.8.1</maven.plugin.version>
     </properties>
 
     <dependencyManagement>
