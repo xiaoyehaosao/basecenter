@@ -1,11 +1,11 @@
-package com.xyhs.b2c;
+package com.xyhs.b2c.basecenter.common;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xyhs.b2c.entity.DeliveryAddressInfo;
-import com.xyhs.b2c.service.DeliveryAddressInfoService;
+import com.xyhs.b2c.basecenter.entity.DeliveryAddressInfo;
+import com.xyhs.b2c.basecenter.service.IDeliveryAddressInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +26,7 @@ import javax.annotation.Resource;
 @Slf4j
 public class DeliveryAddressInfoServiceTest {
     @Resource
-    private DeliveryAddressInfoService deliveryAddressInfoService;
+    private IDeliveryAddressInfoService deliveryAddressInfoService;
 
 
     @Test

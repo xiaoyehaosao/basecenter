@@ -1,6 +1,6 @@
-package com.xyhs.b2c.mapper;
+package com.xyhs.b2c.basecenter.mapper;
 
-import com.xyhs.b2c.entity.DeliveryAddressInfo;
+import com.xyhs.b2c.basecenter.entity.DeliveryAddressInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author ljp
- * @since 2019-12-23
+ * @since 2019-12-30
  */
 public interface DeliveryAddressInfoMapper extends BaseMapper<DeliveryAddressInfo> {
 
