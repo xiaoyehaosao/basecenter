@@ -1,0 +1,16 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: xyhs-basecenter
+  jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+  profiles:
+    active: dev
+  resources:
+     static-locations: classpath:/resources/
+mybatis-plus:
+   configuration:
+      # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
