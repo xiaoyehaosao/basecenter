@@ -17,6 +17,11 @@
             <groupId>com.xyhs.b2c</groupId>
             <artifactId>basecenter-dao</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xyhs.b2c</groupId>
+            <artifactId>tradecenter-export</artifactId>
+            <version>${tradecenter.version}</version>
+        </dependency>
     </dependencies>
 
 

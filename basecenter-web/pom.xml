@@ -19,38 +19,6 @@
             <groupId>com.xyhs.b2c</groupId>
             <artifactId>basecenter-service</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.xyhs.b2c</groupId>
-            <artifactId>tradecenter-export</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>tradecenter-common</artifactId>
-                    <groupId>com.xyhs.b2c</groupId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.xyhs.common</groupId>
-                    <artifactId>commonCore</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-openfeign-core</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-openfeign</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <!--spring-cloud start  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,7 +35,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <!-- consul -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

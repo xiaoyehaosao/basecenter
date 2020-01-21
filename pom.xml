@@ -23,6 +23,7 @@
         <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
         <basecenter.version>0.0.1-SNAPSHOT</basecenter.version>
         <common.core.version>0.0.1-SNAPSHOT</common.core.version>
+        <tradecenter.version>0.0.1-SNAPSHOT</tradecenter.version>
     </properties>
 
     <dependencyManagement>
