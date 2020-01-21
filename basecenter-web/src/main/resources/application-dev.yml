@@ -2,7 +2,7 @@ spring:
 ############# 新注册注册consul 配置################
   cloud:
     consul:
-      host: 10.10.11.107
+      host: 127.0.0.1
       port: 8500
       discovery:
         register: true

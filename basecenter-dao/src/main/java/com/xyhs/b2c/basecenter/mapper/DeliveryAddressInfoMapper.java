@@ -1,7 +1,7 @@
 package com.xyhs.b2c.basecenter.mapper;
 
-import com.xyhs.b2c.basecenter.entity.DeliveryAddressInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xyhs.b2c.basecenter.entity.DeliveryAddressInfo;
 
 /**
  * <p>

@@ -20,6 +20,16 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xyhs.b2c</groupId>
+            <artifactId>basecenter-export</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xyhs.b2c</groupId>
+            <artifactId>common-core-boot</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 </project>
