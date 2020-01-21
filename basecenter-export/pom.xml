@@ -7,8 +7,8 @@
         <groupId>com.xyhs.b2c</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>basecenter-export</artifactId>
 
     <dependencies>

@@ -52,8 +52,7 @@ public class DeliveryAddressInfoController {
         Page<DeliveryAddressInfo> page = new Page<>();
         page.setSize(15);
         page.setCurrent(1);
-        IPage<DeliveryAddressInfo> pages  = iDeliveryAddressInfoService.page(page);
-        return pages;
+        return iDeliveryAddressInfoService.page(page);
     }
 
 }
