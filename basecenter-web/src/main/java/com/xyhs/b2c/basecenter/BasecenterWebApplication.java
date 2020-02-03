@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 @SpringCloudApplication
-@EnableFeignClients("com.xyhs.b2c.*.feign*")
+@EnableFeignClients("com.xyhs.b2c.*")
 public class BasecenterWebApplication {
 
     public static void main(String[] args) {
